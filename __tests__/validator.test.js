@@ -5,10 +5,9 @@ const supertest = require('supertest');
 const request = supertest(server.app);
 
 
-describe('API Server', () => {
+describe('API Validator', () => {
     it('handle server internal errors', async () => {
         const response = await request.get('/person');
         expect(response.status).toEqual(500);
     })
-
 })
