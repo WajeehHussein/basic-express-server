@@ -1,13 +1,13 @@
 'use strict';
-const errorhandler = require('../error-handlers/500')
+// const errorhandler = require('../error-handlers/500')
 const validator = (req, res, next) => {
 
-    // if (error instanceof ValidationError) {
+    if (req.query.name) {
+        next();
+    } else {
+        next('not provided');
+    }
 
-    //     response.status(400).send(error.validationErrors);
-    //     next();
-    // }
-    next();
 }
 
 module.exports = validator

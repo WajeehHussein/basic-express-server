@@ -8,18 +8,16 @@ const app = express();
 app.use(logger)
 
 
-
-
-
-
 app.get(`/person`, validator, (req, res) => {
     res.json({
-        name: req.query
+        name: req.query.name
     })
 })
 
 app.use('*', notFound);
 app.use(errorHandler);
+
+
 function start(port) {
     app.listen(port, () => {
         console.log(`i'm listening on port${port}`);

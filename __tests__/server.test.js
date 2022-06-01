@@ -18,8 +18,5 @@ describe('API Server', () => {
     //     const response = await request.get('/person');
     //     expect(response.status).toEqual(500);
     // })
-    it('get data', async () => {
-        const response = await request.get('/person');
-        expect(response.status).toEqual(200);
-    })
+
 })

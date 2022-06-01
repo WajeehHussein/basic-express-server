@@ -4,4 +4,4 @@ const server = require('./src/server')
 
 let PORT = process.env.PORT;
 
-server.start(PORT)
+server.start(PORT);
