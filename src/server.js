@@ -14,9 +14,9 @@ app.get(`/person`, validator, (req, res) => {
     })
 })
 
-app.use('*', notFound);
-app.use(errorHandler);
 
+app.use(errorHandler);
+app.use('*', notFound);
 
 function start(port) {
     app.listen(port, () => {
