@@ -14,9 +14,12 @@ describe('API Server', () => {
         const response = await request.post('/person');
         expect(response.status).toEqual(404);
     });
-    // it('handle server internal errors', async () => {
-    //     const response = await request.get('/person');
-    //     expect(response.status).toEqual(500);
-    // })
-
+    test('the name is in the query string', async () => {
+        const response = await request.get('/person?name=wajeeh');
+        expect(response.status).toEqual(200)
+    })
+    test('given an name in the query string, the output object is correct', async () => {
+        const response = await request.get('/person?name=wajeeh');
+        expect(response.text).toEqual("{\"name\":\"wajeeh\"}")
+    })
 })
